@@ -3,5 +3,5 @@ Anchieta is a Python (Cython) library for converting and analysing parallel prog
 
 ## People
 This project is a research initiative of:
-Marcos Paulo Bispo Magueta (Federal University of São Paulo - Brazil)\n
-Denise Stringhini (PhD. Federal University of São Paulo - Brazil)
+- Marcos Paulo Bispo Magueta (Federal University of São Paulo - Brazil)
+- Denise Stringhini (PhD. Federal University of São Paulo - Brazil)
