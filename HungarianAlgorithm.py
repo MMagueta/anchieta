@@ -79,13 +79,11 @@ def Print_Graph(G, M, N):
     nx.draw_networkx(G, pos = pos, edges = G.edges, node_color=["#A5B0E6" for _ in range(M)] + ["#A3481B" for _ in range(N)])
     plt.show()
 
-if __name__=="__main__":
-    M, N = 4, 4
+def Generate_DiBipartite(M, N, W):
     G = nx.DiGraph()
     G = nx.bipartite_random_graph(M, N, 1.0, seed=None, directed=False)
-    attributes = {}
-    for e in G.edges():
-        G[e[0]][e[1]]['weight'] = random(1, 11)
+    for e, c in zip(G.edges(), W):
+        G[e[0]][e[1]]['weight'] = c
     matrix = [[] for _ in range(M)]
     
     for i in range(M):
@@ -94,6 +92,8 @@ if __name__=="__main__":
                 matrix[i].append(G[i][j]["weight"])
             except:
                 pass
-
+    return matrix, G
+if __name__=="__main__":
+    matrix, G = Generate_DiBipartite(32, 32, [random(1,11) for _ in range(32*32)])
     optimal = HungarianAlgorithm(matrix)
     print(optimal)
