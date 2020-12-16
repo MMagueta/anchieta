@@ -39,7 +39,7 @@ def filter_links(graph):
         sends[sends.index(s)]['end'] /= normalize_receive
     return sends
 
-with otf2.reader.open("/home/mmagueta/Documents/barnes_hut_4/traces.otf2") as trace:
+with otf2.reader.open("/storage/magueta-storage/n-body/scorep_8/traces.otf2") as trace:
     graph = []
     enter_leave = []
     trace_events = filter(lambda item: item[1].__class__.__name__ == 'MpiSend' or item[1].__class__.__name__ == 'MpiRecv' or item[1].__class__.__name__ == 'MpiCollectiveBegin' or item[1].__class__.__name__ == 'MpiCollectiveEnd', trace.events)
@@ -52,9 +52,6 @@ with otf2.reader.open("/home/mmagueta/Documents/barnes_hut_4/traces.otf2") as tr
             pass
             graph.append({'time': item[1].time, 'sender': item[1].sender, 'receiver': int(item[0].group.name.split(" ")[-1]), 'link_type': item[1].__class__.__name__})
         elif item[1].__class__.__name__ == 'MpiCollectiveEnd':
-            #print(item[1].communicator.group.members)
-            #print(item[1])
-            #print(item[1].root)
             if item[1].collective_op == otf2.CollectiveOp.ALLREDUCE:
                 communicator = list(map(lambda item: int(item.group.name.split(" ")[-1]), item[1].communicator.group.members))
                 for c1 in communicator:
