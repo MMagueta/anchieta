@@ -3,8 +3,8 @@ from distutils.extension import Extension
 from Cython.Distutils import build_ext
 
 ext_module = Extension(
-	"anchieta_extension",
-	["anchieta_extension.pyx"],
+	"AX",
+	["Anchieta_Ext.pyx"],
 	extra_compile_args = ['-fopenmp'],
 	extra_link_args = ['-fopenmp'],
 )

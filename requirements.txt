@@ -1,0 +1,8 @@
+cynetworkx @ file:///storage/magueta-storage/otf2/lib/python3.6/site-packages/anchieta/cynetworkx-2.2rc1.dev20180527181709
+Cython @ file:///storage/magueta-storage/otf2/lib/python3.6/site-packages/anchieta/Cython-0.29.21-cp36-cp36m-manylinux1_x86_64.whl
+decorator==4.4.2
+dynetx @ file:///storage/magueta-storage/otf2/lib/python3.6/site-packages/anchieta/dynetx-0.2.3-py3-none-any.whl
+networkx==2.5
+numpy @ file:///storage/magueta-storage/otf2/lib/python3.6/site-packages/anchieta/numpy-1.19.4-cp36-cp36m-manylinux1_x86_64.whl
+scipy @ file:///storage/magueta-storage/otf2/lib/python3.6/site-packages/anchieta/scipy-1.5.4-cp36-cp36m-manylinux1_x86_64.whl
+six==1.15.0
